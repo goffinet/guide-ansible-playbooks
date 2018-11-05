@@ -8,4 +8,4 @@
     - set_fact:
         df: "{{ df_output }}"
     - debug:
-        msg: "{{ df.stdout_lines | regex_search('root', multiline=True, ignorecase=True) }}"
+        msg: "{{ df.stdout_lines | list }}"
