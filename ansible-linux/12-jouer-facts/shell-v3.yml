@@ -11,6 +11,7 @@
       register: df_used
     - debug:
         msg: "{{ df_used.stdout_lines }}"
+      register: used
     - debug:
         msg: "{{ ansible_hostname}}: Root pratition excedd 2G"
-      when: df_used.stdout_lines > '2000000'
+      when: used > '2000000'
