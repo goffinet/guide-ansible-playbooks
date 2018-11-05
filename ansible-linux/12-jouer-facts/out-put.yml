@@ -8,3 +8,5 @@
     - name: "print output"
       debug:
         msg: "{{ output }}"
+    - debug:
+        msg: "{{ ansible_all_ipv4_addresses }}"
