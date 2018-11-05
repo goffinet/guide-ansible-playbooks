@@ -13,4 +13,5 @@
         dns_name: "{{ ip_address }}.xip.io"
     - debug:
         msg: "{{ ip_address }} {{ dns_name }} {{ ansible_hostname}} "
-    - debug: "{{ ansible_all_ipv4_addresses }}"
+    - debug:
+        msg: "{{ ansible_all_ipv4_addresses }}"
