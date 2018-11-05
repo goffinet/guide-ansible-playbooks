@@ -14,4 +14,4 @@
       register: used
     - debug:
         msg: "{{ ansible_hostname}}: Root pratition excedd 2G"
-      when: used > '2000000'
+      when: "{{ used }}" > '2000000'
