@@ -10,7 +10,7 @@
     - shell: df -T | grep 'root' | awk '{print $4}'
       register: df_used
     - debug:
-        msg: "{{ df_used.stdout_lines | int }}"
+        msg: "{{ df_used | int }}"
       register: used
     - debug:
         msg: "{{ used }}"
