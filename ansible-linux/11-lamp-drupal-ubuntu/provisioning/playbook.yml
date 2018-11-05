@@ -47,6 +47,7 @@
         - libapache2-mod-php7.1
         - python-mysqldb
         - mysql-server
+        - ufw
 
     - name: Disable the firewall (since this is for local dev only).
       service: name=ufw state=stopped
