@@ -8,4 +8,4 @@
     - set_fact:
         df: "{{ df_output }}"
     - debug:
-        msg: "{{ df.stdout_lines | regex_search('vg\-root') }} "
+        msg: "{{ df.stdout_lines | regex_search('root') }}"
