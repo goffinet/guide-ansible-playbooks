@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: True
   tasks:
-    - shell: df -Th | grep 'ext4' | awk '{print $4}'
+    - shell: df -T | grep 'ext4' | awk '{print $4}'
       register: df_total
     - debug:
-        msg: "{{ df.total_lines }}"
+        msg: "{{ df_total.stdout_lines }}"
