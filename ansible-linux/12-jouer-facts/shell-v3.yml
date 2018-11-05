@@ -12,5 +12,5 @@
     - debug:
         msg: "{{ df_used.stdout_lines }}"
     - debug:
-        msg: "{{ ansible hostname}}: Root pratition excedd 2G"
+        msg: "{{ ansible_hostname}}: Root pratition excedd 2G"
       when: df_used.stdout_lines > 2000000
