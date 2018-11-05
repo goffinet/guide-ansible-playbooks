@@ -1,0 +1,16 @@
+---
+- name: "print df -Th"
+  hosts: all
+  gather_facts: True
+  tasks:
+    - shell: df -T | grep 'root' | awk '{print $3}'
+      register: df_total
+    - debug:
+        msg: "{{ df_total.stdout_lines }}"
+    - shell: df -T | grep 'root' | awk '{print $4}'
+      register: df_used
+    - debug:
+        msg: "{{ df_used.stdout_lines }}"
+    - debug:
+        msg: "{{ ansible hostname}}: Root pratition excedd 2G"
+      when: df_used.stdout_lines > 2000000
