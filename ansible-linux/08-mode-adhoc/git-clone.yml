@@ -1,0 +1,17 @@
+---
+- name: git clone demo
+  hosts: all
+  gather_facts: False
+  tasks:
+    - name: "install git"
+      yum:
+        name: git
+        state: present
+    - name: "clone goffinet/guide-ansible-playbooks"
+      git:
+       repo: 'https://github.com/goffinet/guide-ansible-playbooks'
+       dest: /root/guide-ansible-playbooks
+    - name: "Check that directory exists"
+      stat:
+        path: /root/guide-ansible-playbooks
+      register: stat_result
