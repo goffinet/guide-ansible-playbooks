@@ -17,4 +17,5 @@
           - "variable value: {{ variable }},"
           - "prompt value: {{ response }},"
           - "interface {{ interface }}: {{ ipv4.address }},"
-          - "hostname: {{ ansible_hostname }}"
+          - "real hostname: {{ ansible_hostname }}"
+          - "inventory hostname: {{ inventory_hostname }}"
